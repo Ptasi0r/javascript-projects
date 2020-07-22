@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Validator</title>
+    <title>#1 Form Validator</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -31,10 +32,72 @@
         </ul>
         <section class="forms-container">
           <form class="form-login-container active">
-            <h3>Sing in to COACHT</h3>
+            <h3>Log in to COACHT</h3>
+
+            <div class="form-element">
+              <a href="" class="login-site"> <img src="img/google-logo.png" alt="Google logo" /> Log in with Google </a>
+            </div>
+
+            <div class="form-element">
+              <a href="" class="login-site"> <img src="img/github-logo.png" alt="Github logo" />Log in with Github </a>
+            </div>
+            <span class="or-divider">or</span>
+            <div class="form-element">
+              <label class="form-label">Username</label>
+              <input type="text" name="username-login" class="form-input" placeholder="Your username here" />
+            </div>
+
+            <div class="form-element">
+              <label class="form-label">E-mail adress</label>
+              <input type="email" name="email-login" class="form-input" placeholder="name@domain.com" />
+            </div>
+
+            <input type="submit" value="Login" class="login-btn" />
+            <a class="github-link" href="https://github.com/Ptasi0r/javascript-projects" target="_blank"> <img src="img/github-icon.svg" alt="Github logo" />github </a>
           </form>
           <form class="form-signup-container">
             <h3>Register to COACHT</h3>
+            <div class="form-element-container">
+              <div class="form-element">
+                <label class="form-label">First Name</label>
+                <input type="text" name="firstname" class="form-input" placeholder="Your first name here" />
+                <span class="error-msg">Field is require!</span>
+              </div>
+              <div class="form-element">
+                <label class="form-label">Last Name</label>
+                <input type="text" name="lastname" class="form-input" placeholder="Your last name here" />
+                <span class="error-msg">Field is require!</span>
+              </div>
+            </div>
+
+            <div class="form-element">
+              <label class="form-label">Username</label>
+              <input type="text" name="username" class="form-input" placeholder="Your username here" />
+              <span class="error-msg">Field is require!</span>
+            </div>
+
+            <div class="form-element">
+              <label class="form-label">E-mail adress</label>
+              <input type="email" name="email" class="form-input" placeholder="name@domain.com" />
+              <span class="error-msg">Field is require!</span>
+            </div>
+
+            <div class="form-element-container">
+              <div class="form-element">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-input" />
+                <span class="error-msg">Field is require!</span>
+              </div>
+
+              <div class="form-element">
+                <label class="form-label">Confirm password</label>
+                <input type="password" name="repeat-password" class="form-input" />
+                <span class="error-msg">Field is require!</span>
+              </div>
+            </div>
+            <span class="confirm-container"> <input type="checkbox" name="confirm" /> By creating an account you agree to the <a href="">terms of use</a> and our <a href="">privacy policy</a>. </span>
+
+            <input type="submit" value="Register" />
           </form>
         </section>
       </section>

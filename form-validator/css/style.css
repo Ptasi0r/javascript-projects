@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 body {
   margin: 0;
   display: -webkit-box;
@@ -12,11 +12,11 @@ body {
           align-items: center;
   background: #75dddd;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-  height: 70vh;
+  height: 75vh;
   width: 45vw;
   display: -ms-grid;
   display: grid;
@@ -50,6 +50,11 @@ body {
 
 .login-slider {
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
   align-self: flex-end;
   height: 40px;
   width: 170px;
@@ -90,10 +95,12 @@ body {
 }
 
 .forms-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 200%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  margin-right: 10px;
+  width: calc(200% + 40px);
 }
 
 .form-login-container,
@@ -101,17 +108,202 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.form-login-container h3,
+.form-signup-container h3 {
+  text-transform: uppercase;
+  place-self: center;
+}
+
+.form-login-container {
+  padding-right: 40px;
+  position: relative;
+}
+
+.form-element-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  width: 100%;
+  gap: 8px;
+}
+
+.form-element-container .form-element {
+  width: 85% !important;
+}
+
+.form-element-container .form-input {
+  width: 100%;
+}
+
+.form-element {
+  width: 95%;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.form-label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #717171;
+}
+
+.form-input {
+  outline: none;
+  border: 1px solid lightgray;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 5px;
+  padding: 10px;
   width: 100%;
 }
 
-.form-login-container h3,
-.form-signup-container h3 {
+.form-input:focus {
+  outline: auto;
+  outline-color: #27305a;
+}
+
+.confirm-container {
+  color: gray;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.confirm-container a {
+  color: #27305a;
+}
+
+input[type='submit'] {
+  background-color: #27305a;
+  padding: 15px 45px;
+  border: none;
+  color: white;
+  outline: none;
+  font-weight: 600;
   text-transform: uppercase;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: opacity ease-in-out 0.2s;
+  transition: opacity ease-in-out 0.2s;
+}
+
+input[type='submit']:hover {
+  opacity: 0.95;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.login-site {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  padding: 5px 0;
+  -ms-grid-columns: 30px 150px;
+      grid-template-columns: 30px 150px;
+  gap: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-site img {
+  width: 26px;
+}
+
+.or-divider {
+  text-transform: uppercase;
+  margin: 20px 0 10px 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.or-divider:before, .or-divider:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 45%;
+  background-color: lightgray;
+}
+
+.or-divider:before {
+  top: 10px;
+  left: 0;
+}
+
+.or-divider:after {
+  top: 10px;
+  right: 0;
+}
+
+.login-btn {
+  margin-top: 10px;
+}
+
+.github-link {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #939393;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  bottom: 0;
+}
+
+.github-link img {
+  margin-right: 8px;
 }
 /*# sourceMappingURL=style.css.map */

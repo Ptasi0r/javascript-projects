@@ -7,11 +7,11 @@ let sliderContainerRect = sliderContainer.getBoundingClientRect();
 let activeIndex = 0;
 
 const animateForm = (from, to) => {
-  formsContainer.animate([{ transform: `translateX(${from}%)` }, { transform: `translateX(${to}%)` }], {
+  formsContainer.animate([{ transform: `translateX(calc(${from}))` }, { transform: `translateX(calc(${to}))` }], {
     duration: 500,
-    easing: 'ease-in-out'
+    easing: 'ease-in-out',
   });
-  formsContainer.style.transform = `translateX(${to}%)`;
+  formsContainer.style.transform = `translateX(calc(${to}))`;
 };
 
 sliderItems.forEach((li, index) => {
@@ -24,20 +24,20 @@ sliderItems.forEach((li, index) => {
 
     sliderElement.animate([{ left: `${sliderElement.offsetLeft}px` }, { left: `${liRect.left - sliderContainerRect.left}px` }], {
       duration: 500,
-      easing: 'ease-in-out'
+      easing: 'ease-in-out',
     });
     sliderElement.style.left = `${liRect.left - sliderContainerRect.left}px`;
-    sliderItems.forEach(el => {
+    sliderItems.forEach((el) => {
       el.classList.toggle('active');
     });
 
     switch (activeIndex) {
       case 0:
-        animateForm('-50', 0);
+        animateForm('-50% - 10px ', '0px');
         break;
 
       case 1:
-        animateForm(0, '-50');
+        animateForm('0px', '-50% - 10px');
 
       default:
         break;
