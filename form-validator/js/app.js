@@ -213,5 +213,31 @@ register_form.addEventListener('submit', (e) => {
 
 login_form.addEventListener('submit', (e) => {
   e.preventDefault();
-  //TODO: Add login
+  const username = login_form.username;
+  const password = login_form.password;
+
+  let errorFlag = false;
+  /* check if errors */
+  if (checkRequired([username, password])) {
+    errorFlag = true;
+  }
+
+  if (errorFlag) {
+    console.error('Błąd!');
+  } else {
+    const user = localStorage.getItem('user');
+
+    if (user) {
+      const json_data = JSON.parse(user);
+      const json_username = json_data['username'];
+      const json_password = json_data['password'];
+      console.log(json_username, json_password);
+      if (username.value == json_username && password.value == json_password) {
+        alert('zalogowano');
+      }
+      // console.log(user_json);
+    } else {
+      alert('Nie założono konta');
+    }
+  }
 });
