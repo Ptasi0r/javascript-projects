@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #242333;
+  color: white;
+}
+
+.progress-container {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.progress-container .circle {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 35px;
+  width: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.movies-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0;
+}
+
+.movie {
+  background-color: #343348;
+  border-radius: 5px;
+  color: #fff;
+  width: 170px;
+  padding: 20px 5px 20px 5px;
+  text-align: center;
+  margin: 0 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 200px 40px;
+      grid-template-rows: 200px 40px;
+  gap: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.15s ease-in-out;
+  transition: -webkit-transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+}
+
+.movie img {
+  height: 200px;
+}
+
+.movie span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.movie:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.movie.selected {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.seats-legends {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+.seats-legends li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.seats-legends li .seat {
+  margin-right: 5px;
+}
+
+.seats-legends .seat:not(.occupied):hover {
+  cursor: default;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.seat.selected {
+  background-color: #6feaf6;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.movie-theater-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.movie-theater-container .screen {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  margin-bottom: 20px;
+  -webkit-transform: rotateX(-45deg);
+          transform: rotateX(-45deg);
+  -webkit-box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+          box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  -webkit-animation: screen 0.4s infinite;
+          animation: screen 0.4s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.movie-theater-container .movie-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.movie-theater-container .movie-row .seat {
+  margin: 3px;
+}
+
+.movie-theater-container .movie-row .seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.movie-theater-container .movie-row .seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seats-info {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.seats-info span {
+  color: #6feaf6;
+}
+
+@-webkit-keyframes screen {
+  from {
+    -webkit-box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  to {
+    -webkit-box-shadow: 0 3px 13px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 3px 13px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes screen {
+  from {
+    -webkit-box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  to {
+    -webkit-box-shadow: 0 3px 13px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 3px 13px rgba(255, 255, 255, 0.7);
+  }
+}
+/*# sourceMappingURL=style.css.map */
