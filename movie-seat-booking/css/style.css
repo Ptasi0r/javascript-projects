@@ -81,7 +81,7 @@ body {
   display: grid;
   -ms-grid-rows: 200px 40px;
       grid-template-rows: 200px 40px;
-  gap: 15px;
+  gap: 18px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -98,6 +98,7 @@ body {
   transition: -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+  position: relative;
 }
 
 .movie img {
@@ -108,6 +109,15 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.movie .movie-price {
+  position: absolute;
+  bottom: 61px;
+  background: #1b1a26;
+  padding: 7px 5px;
+  border-radius: 37px;
+  min-width: 34px;
 }
 
 .movie:hover {
