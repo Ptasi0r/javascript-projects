@@ -67,6 +67,12 @@ h1 {
   color: #fff;
 }
 
+.video-controls-container .btn .fa-volume-down,
+.video-controls-container .btn .fa-volume-up,
+.video-controls-container .btn .fa-volume-mute {
+  color: #fff;
+}
+
 .video-time {
   text-align: center;
   -ms-flex-item-align: center;
