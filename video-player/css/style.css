@@ -51,6 +51,7 @@ h1 {
 
 .video-controls-container .btn {
   border: 0;
+  outline: none;
   background: transparent;
   cursor: pointer;
 }

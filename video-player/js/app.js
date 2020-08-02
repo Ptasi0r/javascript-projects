@@ -5,6 +5,7 @@ const progress = document.querySelector('.progress');
 const timestamp = document.querySelector('.video-time');
 const volumeSlider = document.querySelector('.volume');
 const volumeMute = document.querySelector('.volume-mute');
+let previousVolume = 0;
 
 const toggleVideoStatus = () => {
   if (video.paused) {
@@ -54,10 +55,11 @@ const setVideoVolume = () => {
 
 const changeMuteVideo = () => {
   if (video.volume == 0) {
-    video.volume = 0.2;
+    video.volume = previousVolume;
     volumeMute.innerHTML = '<i class="fas fa-volume-down fa-2x">';
-    volumeSlider.value = 20;
+    volumeSlider.value = previousVolume * 100;
   } else {
+    previousVolume = video.volume;
     video.volume = 0;
     volumeMute.innerHTML = '<i class="fas fa-volume-mute fa-2x">';
     volumeSlider.value = 0;
