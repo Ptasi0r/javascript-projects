@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+$base-color: #1c648d;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+  height: 100vh;
+}
+
+h1 {
+  color: $base-color;
+  margin-bottom: 50px;
+}
+
+.currency-container,
+.money-container {
+  display: grid;
+  grid-template-columns: 250px 50px 250px;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.currency-container {
+  select {
+    padding: 10px 20px 10px 10px;
+    appearance: none;
+    border: 1px solid #dedede;
+    font-size: 16px;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-position: right 10px top 50%, 0, 0;
+    background-size: 12px auto, 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.money-container {
+  input {
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    text-align: right;
+    outline: none;
+    &:first-of-type {
+      border-bottom: 2px solid lightgray;
+      &:focus {
+        border-bottom: 2px solid $base-color;
+      }
+    }
+  }
+}
+
+footer {
+  width: 650px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  p {
+    text-align: left;
+    color: gray;
+    &:last-of-type {
+      text-align: right;
+      color: $base-color;
+      font-weight: 600;
+    }
+  }
+}
+
+.swap {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

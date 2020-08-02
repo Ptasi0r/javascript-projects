@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#4 Exchange Rate Calculator</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <img src="img/exchange.png" alt="logo" />
+    <h1>Exchange Rate Calculator</h1>
+    <p>Choose the currency and the amount to get the exchange rate</p>
+    <div class="exchange-container">
+      <div class="currency-container">
+        <select name="currency-one" class="currency-one">
+          <option value="AUD">AUD</option>
+          <option value="BGN">BGN</option>
+          <option value="BRL">BRL</option>
+          <option value="CAD">CAD</option>
+          <option value="CHF">CHF</option>
+          <option value="CNY">CNY</option>
+          <option value="CZK">CZK</option>
+          <option value="DKK">DKK</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="HKD">HKD</option>
+          <option value="HRK">HRK</option>
+          <option value="HUF">HUF</option>
+          <option value="IDR">IDR</option>
+          <option value="ILS">ILS</option>
+          <option value="INR">INR</option>
+          <option value="ISK">ISK</option>
+          <option value="JPY">JPY</option>
+          <option value="KRW">KRW</option>
+          <option value="MXN">MXN</option>
+          <option value="MYR">MYR</option>
+          <option value="NOK">NOK</option>
+          <option value="NZD">NZD</option>
+          <option value="PHP">PHP</option>
+          <option value="PLN">PLN</option>
+          <option value="RON">RON</option>
+          <option value="RUB">RUB</option>
+          <option value="SEK">SEK</option>
+          <option value="THB">THB</option>
+          <option value="TRY">TRY</option>
+          <option value="USD" selected>USD</option>
+          <option value="ZAR">ZAR</option>
+        </select>
+        <button class="swap">
+          <svg width="41" height="27" viewBox="0 0 41 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32.4059 1.48992L36.9664 6.05036H3.62531V8.15755H36.9664L32.4059 12.718L33.8959 14.208L41 7.10396L33.8959 0L32.4059 1.48992Z" fill="#1C648D" />
+            <path d="M8.59401 14.1332L7.10402 12.6432L0 19.7472L7.10402 26.8513L8.59401 25.3613L4.03357 20.8008L36.7855 20.7427V18.6355L4.03357 18.6936L8.59401 14.1332Z" fill="#1C648D" />
+          </svg>
+        </button>
+        <select name="currency-two" class="currency-two">
+          <option value="AUD">AUD</option>
+          <option value="BGN">BGN</option>
+          <option value="BRL">BRL</option>
+          <option value="CAD">CAD</option>
+          <option value="CHF">CHF</option>
+          <option value="CNY">CNY</option>
+          <option value="CZK">CZK</option>
+          <option value="DKK">DKK</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="HKD">HKD</option>
+          <option value="HRK">HRK</option>
+          <option value="HUF">HUF</option>
+          <option value="IDR">IDR</option>
+          <option value="ILS">ILS</option>
+          <option value="INR">INR</option>
+          <option value="ISK">ISK</option>
+          <option value="JPY">JPY</option>
+          <option value="KRW">KRW</option>
+          <option value="MXN">MXN</option>
+          <option value="MYR">MYR</option>
+          <option value="NOK">NOK</option>
+          <option value="NZD">NZD</option>
+          <option value="PHP">PHP</option>
+          <option value="PLN" selected>PLN</option>
+          <option value="RON">RON</option>
+          <option value="RUB">RUB</option>
+          <option value="SEK">SEK</option>
+          <option value="THB">THB</option>
+          <option value="TRY">TRY</option>
+          <option value="USD">USD</option>
+          <option value="ZAR">ZAR</option>
+        </select>
+      </div>
+      <div class="money-container">
+        <input type="number" name="amount-one" class="amount-one" placeholder="0" value="1" step="0.01" min="0" />
+        <span></span>
+        <input type="number" name="amount-two" class="amount-two" placeholder="0" min="0" />
+      </div>
+    </div>
+    <footer>
+      <p>Last update: <span class="date">02.08.2020 22:17</span></p>
+      <p class="rate">1USD = 0.86222 PLN</p>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
