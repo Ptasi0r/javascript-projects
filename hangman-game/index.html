@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#7 Hangman Game</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Hangman Game</h1>
+    <p>Find the hidden word - Enter a letter</p>
+
+    <div class="word"></div>
+
+    <div class="game-container">
+      <svg class="figure-container" height="250" width="200">
+        <!-- Rod-->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+        <!-- Hangman-->
+        <circle cx="140" cy="70" r="20" class="figure-part" />
+        <!-- Body -->
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+        <!-- Arms -->
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+        <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
+        <!-- Legs -->
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+        <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+      </svg>
+
+      <div class="keyboard-container">
+        <div class="letter" data-letter="a">A</div>
+        <div class="letter" data-letter="b">B</div>
+        <div class="letter" data-letter="c">C</div>
+        <div class="letter" data-letter="d">D</div>
+        <div class="letter" data-letter="e">E</div>
+        <div class="letter" data-letter="f">F</div>
+        <div class="letter" data-letter="g">G</div>
+        <div class="letter" data-letter="h">H</div>
+        <div class="letter" data-letter="i">I</div>
+        <div class="letter" data-letter="j">J</div>
+        <div class="letter" data-letter="k">K</div>
+        <div class="letter" data-letter="l">L</div>
+        <div class="letter" data-letter="m">M</div>
+        <div class="letter" data-letter="n">N</div>
+        <div class="letter" data-letter="o">O</div>
+        <div class="letter" data-letter="p">P</div>
+        <div class="letter" data-letter="q">Q</div>
+        <div class="letter" data-letter="r">R</div>
+        <div class="letter" data-letter="s">S</div>
+        <div class="letter" data-letter="t">T</div>
+        <div class="letter" data-letter="u">U</div>
+        <div class="letter" data-letter="v">V</div>
+        <div class="letter" data-letter="w">W</div>
+        <div class="letter" data-letter="x">X</div>
+        <div class="letter" data-letter="y">Y</div>
+        <div class="letter" data-letter="z">Z</div>
+        <div class="hint">
+          <svg width="25" height="25" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7.5 4.375C6.84412 4.375 6.20486 4.58137 5.67278 4.96487C5.1407 5.34837 4.74277 5.88956 4.53536 6.51179C4.32796 7.13401 4.32158 7.80572 4.51715 8.43177C4.71271 9.05782 5.10029 9.60647 5.625 10V12.5C5.625 12.8315 5.7567 13.1495 5.99112 13.3839C6.22554 13.6183 6.54348 13.75 6.875 13.75H8.125C8.45652 13.75 8.77446 13.6183 9.00888 13.3839C9.2433 13.1495 9.375 12.8315 9.375 12.5V10C9.89971 9.60647 10.2873 9.05782 10.4829 8.43177C10.6784 7.80572 10.672 7.13401 10.4646 6.51179C10.2572 5.88956 9.8593 5.34837 9.32722 4.96487C8.79514 4.58137 8.15588 4.375 7.5 4.375V4.375ZM8.4375 9.11875C8.34212 9.17382 8.26299 9.25311 8.20811 9.34859C8.15323 9.44408 8.12456 9.55237 8.125 9.6625V12.5H6.875V9.6625C6.87544 9.55237 6.84677 9.44408 6.79189 9.34859C6.73701 9.25311 6.65788 9.17382 6.5625 9.11875C6.2782 8.95461 6.04198 8.71871 5.87746 8.43464C5.71294 8.15056 5.62588 7.82827 5.625 7.5C5.625 7.00272 5.82254 6.52581 6.17417 6.17417C6.52581 5.82254 7.00272 5.625 7.5 5.625C7.99728 5.625 8.47419 5.82254 8.82583 6.17417C9.17746 6.52581 9.375 7.00272 9.375 7.5C9.37412 7.82827 9.28706 8.15056 9.12254 8.43464C8.95802 8.71871 8.7218 8.95461 8.4375 9.11875ZM7.5 3.75C7.66576 3.75 7.82473 3.68415 7.94194 3.56694C8.05915 3.44973 8.125 3.29076 8.125 3.125V1.875C8.125 1.70924 8.05915 1.55027 7.94194 1.43306C7.82473 1.31585 7.66576 1.25 7.5 1.25C7.33424 1.25 7.17527 1.31585 7.05806 1.43306C6.94085 1.55027 6.875 1.70924 6.875 1.875V3.125C6.875 3.29076 6.94085 3.44973 7.05806 3.56694C7.17527 3.68415 7.33424 3.75 7.5 3.75ZM13.125 6.875H11.875C11.7092 6.875 11.5503 6.94085 11.4331 7.05806C11.3158 7.17527 11.25 7.33424 11.25 7.5C11.25 7.66576 11.3158 7.82473 11.4331 7.94194C11.5503 8.05915 11.7092 8.125 11.875 8.125H13.125C13.2908 8.125 13.4497 8.05915 13.5669 7.94194C13.6842 7.82473 13.75 7.66576 13.75 7.5C13.75 7.33424 13.6842 7.17527 13.5669 7.05806C13.4497 6.94085 13.2908 6.875 13.125 6.875ZM3.125 6.875H1.875C1.70924 6.875 1.55027 6.94085 1.43306 7.05806C1.31585 7.17527 1.25 7.33424 1.25 7.5C1.25 7.66576 1.31585 7.82473 1.43306 7.94194C1.55027 8.05915 1.70924 8.125 1.875 8.125H3.125C3.29076 8.125 3.44973 8.05915 3.56694 7.94194C3.68415 7.82473 3.75 7.66576 3.75 7.5C3.75 7.33424 3.68415 7.17527 3.56694 7.05806C3.44973 6.94085 3.29076 6.875 3.125 6.875ZM4.7875 4.0125L3.8875 3.125C3.76567 3.0098 3.60306 2.94771 3.43545 2.9524C3.26784 2.95709 3.10895 3.02817 2.99375 3.15C2.87855 3.27183 2.81646 3.43444 2.82115 3.60205C2.82584 3.76966 2.89692 3.92855 3.01875 4.04375L3.91875 4.9125C3.97915 4.97082 4.05067 5.01637 4.12906 5.04644C4.20745 5.0765 4.2911 5.09047 4.375 5.0875C4.45919 5.08718 4.54245 5.06985 4.61978 5.03656C4.6971 5.00326 4.76691 4.95469 4.825 4.89375C4.93656 4.77176 4.99526 4.61054 4.98823 4.44538C4.9812 4.28022 4.90902 4.12457 4.7875 4.0125V4.0125ZM11.9938 3.15625C11.8766 3.03984 11.7182 2.9745 11.5531 2.9745C11.388 2.9745 11.2296 3.03984 11.1125 3.15625L10.2125 4.0125C10.0961 4.1296 10.0308 4.28801 10.0308 4.45312C10.0308 4.61824 10.0961 4.77665 10.2125 4.89375C10.2706 4.95469 10.3404 5.00326 10.4177 5.03656C10.4951 5.06985 10.5783 5.08718 10.6625 5.0875C10.8234 5.08686 10.9779 5.02418 11.0938 4.9125L11.9938 4.04375C12.0523 3.98565 12.0988 3.91652 12.1306 3.84036C12.1623 3.7642 12.1786 3.68251 12.1786 3.6C12.1786 3.51749 12.1623 3.4358 12.1306 3.35964C12.0988 3.28348 12.0523 3.21435 11.9938 3.15625V3.15625Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+
+        <div class="wrong-letters-contianer">
+          <div class="wrong-letters"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-container">
+      <div class="popup">
+        <h2 class="final-message"></h2>
+        <span class="answear"></span>
+        <button class="play-again">Play Again</button>
+      </div>
+    </div>
+
+    <div class="notification-container">
+      <p>❗ You have already entered this letter ❗</p>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
