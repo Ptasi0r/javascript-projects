@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+$brown-color: #6a4420;
+$modal-duration: 1s;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f7f7f7;
+  transition: transform 0.3s ease-in-out;
+  &.show-nav {
+    transform: translate(200px);
+  }
+}
+
+header {
+  display: grid;
+  width: 100vw;
+  height: 150px;
+  padding: 30px 60px;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 50px 1fr 50px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  h1 {
+    font-weight: 600;
+    margin-left: 5px;
+  }
+
+  .header-second {
+    font-weight: 300;
+  }
+
+  .domain {
+    font-weight: 300;
+    font-size: 18px;
+  }
+}
+
+.site-nav {
+  background-color: white !important;
+  position: fixed;
+  padding: 50px 10px;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: 200px 1fr 50px;
+  transform: translateX(-100%);
+
+  ul {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 100px;
+    li {
+      margin: 5px 0;
+      a {
+        color: black;
+        display: block;
+        font-size: 22px;
+        text-decoration: none;
+        padding: 20px 0;
+      }
+    }
+  }
+
+  img {
+    &:last-of-type {
+      margin: 0 auto;
+    }
+  }
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  img {
+    width: 140px;
+  }
+
+  p {
+    font-size: 16px;
+    span {
+      color: $brown-color;
+      font-size: 18px;
+    }
+  }
+}
+
+.main-container {
+  height: calc(100vh - 150px);
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+    width: 45vw;
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  h2 {
+    font-size: 57px;
+    font-weight: normal;
+    line-height: 153.68%;
+    margin-top: 200px;
+    margin-bottom: 30px;
+    width: fit-content;
+    span {
+      color: $brown-color;
+    }
+  }
+  p {
+    width: 100%;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.open-modal,
+.send {
+  background-color: $brown-color;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 50px;
+  border-radius: 25px;
+  margin-top: 40px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+}
+.send {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &.show-modal {
+    display: block;
+    animation: fadeIn $modal-duration;
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: white;
+  width: 50vw;
+  max-width: 100%;
+  min-height: 50vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+
+  .modal-header {
+    display: grid;
+    grid-template-columns: 39px 1fr 39px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+    h2 {
+      font-weight: normal;
+      font-size: 24px;
+      margin: 0;
+      span {
+        color: $brown-color;
+      }
+    }
+  }
+  p {
+    margin-top: 0;
+  }
+  input,
+  textarea {
+    border: 1px solid $brown-color;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+    outline: none;
+  }
+  input {
+    margin: 30px 0 40px 0;
+  }
+  .close {
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

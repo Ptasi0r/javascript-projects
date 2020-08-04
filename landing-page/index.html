@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#6 Landing Page with Navbar and Modal</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="user-profile">
+        <img src="img/person.png" alt="Person from unsplash" />
+        <p>You are login as <br /><span>administator</span></p>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Admin</a></li>
+      </ul>
+      <img src="img/logo-gray.svg" alt="Logo gray" />
+    </nav>
+
+    <header>
+      <button class="navbar-toggle">
+        <svg width="52" height="44" viewBox="0 0 52 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="1" x2="52" y2="1" stroke="black" stroke-width="2" />
+          <line y1="22" x2="37.7419" y2="22" stroke="black" stroke-width="2" />
+          <line y1="43" x2="52" y2="43" stroke="black" stroke-width="2" />
+        </svg>
+      </button>
+      <span class="logo">
+        <img src="img/logo.svg" alt="Logo" />
+        <h1>OWL<span class="header-second">outpost</span><span class="domain">.com</span></h1>
+      </span>
+      <span></span>
+    </header>
+
+    <section class="main-container">
+      <aside>
+        <div class="aside-container">
+          <h2>
+            <span>Train</span>&nbsp;your&nbsp;owl <br />
+            with&nbsp;<span>professionalists</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus id nunc augue consequat, iaculis odio porta. In ut sapien a, arcu, bibendum et dignissim aliquam orci. Sit metus, sit
+            tempus.
+          </p>
+          <button class="open-modal">
+            Start training
+          </button>
+        </div>
+      </aside>
+      <img src="img/background-img.png" alt="Owl picture" />
+    </section>
+    <div class="modal-container">
+      <div class="modal">
+        <div class="modal-header">
+          <span class="close">
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.1495 19.4922L32.3669 7.27244C32.4517 7.18679 32.4994 7.07114 32.4994 6.95063C32.4994 6.83012 32.4517 6.71447 32.3669 6.62882C32.2799 6.54598 32.1643 6.49984 32.0441 6.5C31.924 6.50017 31.8085 6.54663 31.7218 6.62971L19.5061 18.8486L7.28875 6.62882C7.20173 6.54652 7.08646 6.50065 6.96663 6.50065C6.8468 6.50065 6.73153 6.54652 6.64451 6.62882C6.5597 6.71432 6.51212 6.82982 6.51212 6.95019C6.51212 7.07055 6.5597 7.18605 6.64451 7.27155L18.8628 19.4922L6.6454 31.712C6.60057 31.7536 6.56459 31.8038 6.53962 31.8596C6.51465 31.9155 6.5012 31.9757 6.50008 32.0368C6.49895 32.098 6.51017 32.1587 6.53307 32.2154C6.55596 32.2721 6.59006 32.3236 6.63333 32.3668C6.6766 32.41 6.72815 32.4441 6.7849 32.467C6.84164 32.4898 6.90242 32.501 6.9636 32.4999C7.02478 32.4988 7.08511 32.4854 7.14097 32.4604C7.19684 32.4355 7.2471 32.3995 7.28875 32.3547L19.5061 20.1358L31.7227 32.3556C31.7649 32.3979 31.8151 32.4314 31.8703 32.4543C31.9255 32.4772 31.9847 32.489 32.0445 32.4891C32.1042 32.4891 32.1634 32.4774 32.2187 32.4546C32.2739 32.4317 32.3241 32.3983 32.3664 32.3561C32.4087 32.3139 32.4423 32.2638 32.4652 32.2086C32.4881 32.1534 32.5 32.0943 32.5 32.0346C32.5 31.9749 32.4883 31.9157 32.4655 31.8605C32.4426 31.8053 32.4091 31.7552 32.3669 31.7129L20.1495 19.4922Z"
+                fill="black"
+              />
+            </svg>
+          </span>
+          <h2>Send a <span>letter</span> to us!</h2>
+          <span></span>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit</p>
+        <input type="email" name="email" id="email" placeholder="Email" />
+        <textarea name="message" cols="50" rows="5" placeholder="Your message"></textarea>
+        <button class="send">
+          Send
+        </button>
+        <img src="img/logo-gray.svg" alt="Logo gray" />
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
