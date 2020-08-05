@@ -10,3 +10,4 @@
 - **Exchange Calculator:** UI change, API change
 - **Landing Page with Navbar and Modal:** UI change, modal fading out added
 - **Hangman Game:** Keyboard and hints added
+- **Meal Finder:** IU changer, scroll to recipe added

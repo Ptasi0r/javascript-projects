@@ -28,7 +28,6 @@ const words = [
   'callback',
   'python',
 ];
-//TODO: Słowa z randomowe słowo z api http://api.wordnik.com:80/v4/words.json/randomWords?hasDictionaryDef=true&minCorpusCount=0&minLength=5&maxLength=15&limit=1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 

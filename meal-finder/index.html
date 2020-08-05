@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#8 Meal Finder</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container"><h1>Meal Finder</h1></div>
+      <div class="form">
+        <form class="meal-form">
+          <input type="text" name="name" class="meal-name" placeholder="Meal name" />
+          <button class="search-btn">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11.1429 0C14.0981 0 16.9324 1.17398 19.022 3.26367C21.1117 5.35336 22.2857 8.18759 22.2857 11.1429C22.2857 13.9029 21.2743 16.44 19.6114 18.3943L20.0743 18.8571H21.4286L30 27.4286L27.4286 30L18.8571 21.4286V20.0743L18.3943 19.6114C16.3724 21.3373 13.8012 22.2855 11.1429 22.2857C8.18759 22.2857 5.35336 21.1117 3.26367 19.022C1.17398 16.9324 0 14.0981 0 11.1429C0 8.18759 1.17398 5.35336 3.26367 3.26367C5.35336 1.17398 8.18759 0 11.1429 0ZM11.1429 3.42857C6.85714 3.42857 3.42857 6.85714 3.42857 11.1429C3.42857 15.4286 6.85714 18.8571 11.1429 18.8571C15.4286 18.8571 18.8571 15.4286 18.8571 11.1429C18.8571 6.85714 15.4286 3.42857 11.1429 3.42857Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+        </form>
+        <hr class="form-hr" />
+        <button class="random">
+          <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.5 31.875C7.00272 31.875 6.52581 31.6775 6.17417 31.3258C5.82254 30.9742 5.625 30.4973 5.625 30C5.625 29.5027 5.82254 29.0258 6.17417 28.6742C6.52581 28.3225 7.00272 28.125 7.5 28.125H11.25L16.875 22.5L11.25 16.875H7.5C7.01723 16.8534 6.56138 16.6464 6.22739 16.2972C5.8934 15.9479 5.707 15.4833 5.707 15C5.707 14.5167 5.8934 14.0521 6.22739 13.7028C6.56138 13.3536 7.01723 13.1466 7.5 13.125H13.125L20.625 20.625L28.125 13.125H31.875V9.375L39.375 15.0019L31.875 20.625V16.875H30L24.375 22.5L30 28.125H31.875V24.375L39.375 30L31.875 35.625V31.875H28.125L20.625 24.375L13.125 31.875H7.5Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+      </div>
+      <span class="temp"></span>
+    </header>
+    <main class="result">
+      <h2 class="placeholder-text">INSERT MEAL NAME FIRST</h2>
+      <div class="result-heading"></div>
+      <div class="meals"></div>
+      <div class="single-meal-container"></div>
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>
