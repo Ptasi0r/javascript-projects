@@ -316,7 +316,6 @@ body {
 .song-progress .progress {
   background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%);
   position: absolute;
-  width: 10%;
   top: 0;
   left: 0;
   height: 3px;
@@ -502,6 +501,10 @@ body {
           transform: scale(0.8);
 }
 
+.progress-bar {
+  cursor: pointer;
+}
+
 .volume-control-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -532,7 +535,7 @@ body {
 .volume-control-bar .progress {
   background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%);
   position: absolute;
-  width: 10%;
+  width: 20%;
   top: 0;
   left: 0;
 }

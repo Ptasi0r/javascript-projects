@@ -206,7 +206,6 @@ body {
   .progress {
     background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%);
     position: absolute;
-    width: 10%;
     top: 0;
     left: 0;
     height: 3px;
@@ -339,6 +338,10 @@ body {
   }
 }
 
+.progress-bar {
+  cursor: pointer;
+}
+
 .volume-control-bar {
   display: flex;
   justify-content: center;
@@ -359,7 +362,7 @@ body {
   .progress {
     background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%);
     position: absolute;
-    width: 10%;
+    width: 20%;
     top: 0;
     left: 0;
   }
