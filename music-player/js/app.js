@@ -60,6 +60,7 @@ const songs = [
 
 let songIndex = 1;
 let likedSongs = [];
+let path = '';
 
 // Update song details
 const loadSong = (song) => {
@@ -68,18 +69,18 @@ const loadSong = (song) => {
     <h4 class="song-name">${song.name}</h4>
     <h5 class="song-artist">${song.artist}</h5>`;
   });
-  coverBottom.src = `songs/covers/${song.songName}.jpg`;
-  coverRotate.src = `songs/covers/${song.songName}.jpg`;
+  coverBottom.src = `${path}songs/covers/${song.songName}.jpg`;
+  coverRotate.src = `${path}songs/covers/${song.songName}.jpg`;
 
-  audioEl.src = `songs/music/${song.songName}.mp3`;
+  audioEl.src = `${path}songs/music/${song.songName}.mp3`;
 };
 
 const playSong = () => {
   coverRotate.classList.add('play');
 
   //Change icons
-  playImgBottom.setAttribute('src', 'img/pause-small.svg');
-  playImgPopup.setAttribute('src', 'img/pause-big.svg');
+  playImgBottom.setAttribute('src', `${path}img/pause-small.svg`);
+  playImgPopup.setAttribute('src', `${path}img/pause-big.svg`);
 
   audioEl.play();
   updateLocalStorage();
@@ -89,8 +90,8 @@ const pauseSong = () => {
   coverRotate.classList.remove('play');
 
   //Change icons
-  playImgBottom.setAttribute('src', 'img/play-small.svg');
-  playImgPopup.setAttribute('src', 'img/play-big.svg');
+  playImgBottom.setAttribute('src', `${path}img/play-small.svg`);
+  playImgPopup.setAttribute('src', `${path}img/play-big.svg`);
   audioEl.pause();
   updateLocalStorage();
 };
@@ -156,7 +157,8 @@ const updateLocalStorage = () => {
 
 // Get data from LocalStorage
 const getDataFromLocalStorage = () => {
-  const data = JSON.parse(localStorage.getItem('musicPlayer'));
+  const localStorageData = JSON.parse(localStorage.getItem('musicPlayer'));
+  const data = localStorage.getItem('musicPlayer') !== null ? localStorageData : [];
   // Set current song
   if (data.songIndex) {
     songIndex = data.songIndex;
@@ -194,10 +196,18 @@ const updateHearts = () => {
 };
 
 //Initally load song details into DOM
+try {
+  audioEl.src = `${path}songs/music/demons.mp3`;
+} catch {
+  path = 'https://raw.githubusercontent.com/Ptasi0r/javascript-projects/master/music-player/';
+}
+
 getDataFromLocalStorage();
 loadSong(songs[songIndex]);
 updateHearts();
 audioEl.volume = '0.2';
+
+// Check if on github.pages
 
 //Show and hide popup
 showPopup.addEventListener('click', () => {
@@ -267,10 +277,32 @@ playSongBtns.forEach((playSongBtn) => {
       }
     });
 
-    popup.classList.add('show');
-    loadSong(choosenSong);
-    songIndex = songs.findIndex((i) => i.songName === songToPlay);
-    playSong();
+    const choosenSongIndex = songs.findIndex((i) => i.songName === songToPlay);
+    if (choosenSongIndex != songIndex) {
+      songIndex = choosenSongIndex;
+      popup.classList.add('show');
+      //Change buttons icons
+      playSongBtns.forEach((btn) => {
+        const img = btn.querySelector('img');
+        img.src = `${path}img/play.svg`;
+      });
+      const img = playSongBtn.querySelector('img');
+      img.src = `${path}img/pause-small-gray.svg`;
+
+      loadSong(choosenSong);
+      playSong();
+    } else {
+      const isPlaying = audioEl.paused;
+      if (!isPlaying) {
+        const img = playSongBtn.querySelector('img');
+        img.src = `${path}img/play.svg`;
+        pauseSong();
+      } else {
+        const img = playSongBtn.querySelector('img');
+        img.src = `${path}img/pause-small-gray.svg`;
+        playSong();
+      }
+    }
   });
 });
 
