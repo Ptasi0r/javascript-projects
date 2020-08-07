@@ -43,6 +43,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
+  overflow: hidden;
 }
 
 .app-header {
@@ -210,5 +211,165 @@ body {
     left: 0;
     height: 3px;
     border-radius: 2px;
+  }
+}
+
+.music-info-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  border-radius: 20px;
+  height: 85%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px;
+  background-color: white;
+  z-index: 100;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 1s ease-in-out;
+  &.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .hide-popup {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  h5 {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px 0;
+    color: #a4a4a4;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4,
+    h5 {
+      margin: 5px 0;
+    }
+
+    .song-name {
+      font-size: 18px;
+    }
+  }
+
+  .song-progress {
+    width: 70%;
+    .base,
+    .progress {
+      height: 6px;
+      border-radius: 6px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 0;
+    button {
+      outline: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      background: transparent;
+      margin: 0 6px;
+      transition: transfrom 0.2s ease-in-out;
+      &:active {
+        transform: scale(0.8);
+      }
+    }
+  }
+}
+
+.cover-rotate {
+  margin: 10px 0;
+  position: relative;
+  img {
+    width: 190px;
+    height: 190px;
+    border-radius: 100px;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+    &.play {
+      animation-play-state: running;
+    }
+  }
+  .circle {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.volume-control {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+    margin: 0 6px;
+    transition: transfrom 0.2s ease-in-out;
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.volume-control-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 6px;
+  .base,
+  .progress {
+    height: 6px;
+    border-radius: 6px;
+  }
+  .base {
+    background: #c4c4c4;
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  .progress {
+    background: linear-gradient(135deg, #43cbff 0%, #9708cc 100%);
+    position: absolute;
+    width: 10%;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
