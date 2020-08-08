@@ -13,3 +13,4 @@
 - **Meal Finder:** UI change, scroll to recipe added
 - **Music Player:** UI change, Saving data to LocalStorage added, volume controll added
 - **Infinite Scrolling:** UI change, random photo added
+- **Typing game:** Added fetching random word, added saving scores to scoreboard
