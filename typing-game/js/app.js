@@ -165,7 +165,7 @@ const addScores = () => {
       el.classList.add('score');
       el.innerHTML = `
         <span class="number">${getIcon(index + 1)}</span>
-        <span class="score-item">Score: ${score.score} <br> (${score.difficulty}: score * ${rules[score.difficulty].scoreMultiplier})</span>
+        <span class="score-item">Score: ${score.score} (${rules[score.difficulty].scoreMultiplier * score.score}) <br> (${score.difficulty}: score * ${rules[score.difficulty].scoreMultiplier})</span>
         <span class="date">${new Date(1596926308657).toLocaleDateString()}</span>
       `;
       scores.appendChild(el);
