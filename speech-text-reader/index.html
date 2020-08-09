@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#13 Speech Text Reader</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Speech Text Reader</h1>
+      <button class="toggle btn">Toggle Text Box</button>
+      <div class="text-box">
+        <div class="close">X</div>
+        <h3>Choose Voice</h3>
+        <select class="voices"></select>
+        <textarea class="text" placeholder="Enter text to read..."></textarea>
+        <button class="btn read">Read Text</button>
+      </div>
+
+      <main></main>
+
+      <div class="custom-box">
+        <div class="close close-custom">X</div>
+        <h3>Create custom card</h3>
+        <input type="text" class="card-name" placeholder="Enter card name..." />
+        <h4>Input keyword to search for a cover</h4>
+        <div class="input-container">
+          <input type="text" class="keywords" placeholder="Enter keywords..." />
+          <button class="search-photo">Search</button>
+        </div>
+        <div class="unsplash-respond"></div>
+        <button class="btn save-card">Save Card</button>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

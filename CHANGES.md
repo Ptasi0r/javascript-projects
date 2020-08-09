@@ -14,3 +14,4 @@
 - **Music Player:** UI change, Saving data to LocalStorage added, volume controll added
 - **Infinite Scrolling:** UI change, random photo added
 - **Typing game:** Added fetching random word, added saving scores to scoreboard
+- **Speech Reader:** Added custom user's card with image select from Unsplash API, saved in LocalStorage
