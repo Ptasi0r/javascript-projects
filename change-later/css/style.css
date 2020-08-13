@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+html {
+  --bg: #f6f6f6;
+  --card: #ffffff;
+  --headColor: #0077ff;
+  --textColor: #272727;
+  --lightText: #ddd;
+}
+
+html[data-theme='dark'] {
+  --bg: #333333;
+  --card: #434343;
+  --headColor: #3694ff;
+  --textColor: #b5b5b5;
+  --lightText: #ddd;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--textColor);
+  background-color: var(--bg);
+  font-family: 'Open Sans', sans-serif;
+  -webkit-transition: background-color 750ms;
+  transition: background-color 750ms;
+}
+
+path,
+rect {
+  fill: var(--textColor) !important;
+  -webkit-transition: fill 750ms;
+  transition: fill 750ms;
+}
+
+h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 40px;
+  -webkit-transition: color 750ms;
+  transition: color 750ms;
+}
+
+h1 svg {
+  margin-right: 10px;
+}
+
+h1 span {
+  font-weight: 300;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--card);
+  -webkit-box-shadow: 0px 0px 7.66667px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 7.66667px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  height: 50px;
+  color: var(--textColor);
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: color 750ms, background-color 750ms, -webkit-transform 0.2s linear;
+  transition: color 750ms, background-color 750ms, -webkit-transform 0.2s linear;
+  transition: color 750ms, background-color 750ms, transform 0.2s linear;
+  transition: color 750ms, background-color 750ms, transform 0.2s linear, -webkit-transform 0.2s linear;
+}
+
+.btn:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.btn svg {
+  margin-right: 10px;
+}
+
+.btn-ghost {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: transparent;
+}
+
+.clear {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.github {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+.cards-container {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  position: relative;
+  height: 300px;
+  width: 500px;
+  max-width: 100%;
+  margin: 50px 0;
+}
+
+.card {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: translateX(50%) rotateY(-10deg);
+          transform: translateX(50%) rotateY(-10deg);
+  -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+  transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.card.active {
+  opacity: 1;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-transform: translateX(0%) rotateY(0deg);
+          transform: translateX(0%) rotateY(0deg);
+}
+
+.card.left {
+  -webkit-transform: translateX(-50%) rotateY(10deg);
+          transform: translateX(-50%) rotateY(10deg);
+}
+
+.card.show-answer .inner-card {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.inner-card {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+
+.inner-card-front,
+.inner-card-back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--card);
+  -webkit-transition: background-color 750ms;
+  transition: background-color 750ms;
+}
+
+.inner-card-front .number,
+.inner-card-back .number {
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+  color: var(--lightText);
+  position: absolute;
+}
+
+.inner-card-front::after,
+.inner-card-back::after {
+  content: '\f021   Flip';
+  font-family: 'Font Awesome 5 Free', Open Sans !important;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--lightText);
+}
+
+.inner-card-front {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  z-index: 2;
+}
+
+.inner-card-back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.theme-container {
+  background-color: var(--card);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  width: 200px;
+  border-radius: 4px;
+  max-width: 100%;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 30px 1fr 30px;
+      grid-template-columns: 30px 1fr 30px;
+}
+
+.theme-container span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.theme-container svg {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.theme-container svg path {
+  fill: var(--lightText);
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: var(--card);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  width: 300px;
+  max-width: 100%;
+  font-size: 20px;
+  height: 50px;
+  -webkit-transition: background-color 750ms, color 750ms;
+  transition: background-color 750ms, color 750ms;
+}
+
+.navigation .nav-button {
+  border: none;
+  height: 50px;
+  outline: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--lightText);
+  background-color: transparent;
+  -webkit-transition: color 750ms;
+  transition: color 750ms;
+}
+
+.add-container {
+  z-index: -1;
+  opacity: 0;
+  background-color: var(--bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.add-container.show {
+  opacity: 1;
+  z-index: 2;
+}
+
+.add-container h1 {
+  position: relative;
+}
+
+.add-container h1 button {
+  position: absolute;
+  right: 0;
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0);
+  z-index: 2;
+}
+
+.add-container h1 button:hover {
+  -webkit-transform: translate(120%, 0);
+          transform: translate(120%, 0);
+}
+
+.add-container h3 {
+  margin: 10px 0;
+}
+
+.form-group textarea {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 12px;
+  min-width: 500px;
+  max-width: 100%;
+}
+
+.form-group textarea:last-of-type {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin: 20px 0 10px;
+}
+
+#switchTheme {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#switchTheme:checked + label {
+  background-color: var(--headColor);
+  -webkit-transition: background-color 750ms;
+  transition: background-color 750ms;
+}
+
+#switchTheme:checked + label::after {
+  left: calc(100% - 3px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+#switchThemeLabel {
+  cursor: pointer;
+  text-indent: -9999px;
+  display: block;
+  width: 52px;
+  height: 27px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+}
+
+#switchThemeLabel::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+/*# sourceMappingURL=style.css.map */
