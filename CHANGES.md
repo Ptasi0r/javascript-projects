@@ -16,3 +16,4 @@
 - **Typing game:** Added fetching random word, added saving scores to scoreboard
 - **Speech Reader:** Added custom user's card with image select from Unsplash API, saved in LocalStorage
 - **Memory Cards:** UI change, added light and dark mode
+- **Lyrics Search:** small UI change, added functionality from Deezer API (img, song preview)
