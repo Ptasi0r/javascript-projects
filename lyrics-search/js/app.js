@@ -14,7 +14,7 @@ const searchSongs = async (searchTerm) => {
 };
 
 // Show song and artist in DOM
-const showData = (data) => {
+const showData = async (data) => {
   // let output = '';
   // data.data.forEach((song) => {
   //   output += `
@@ -36,11 +36,11 @@ const showData = (data) => {
       ${data.data
         .map(
           (song) => ` 
-          <li>
-            <img src="${song.album.cover_small}">
-            <span><strong>${song.artist.name}</strong> - ${song.title}</span>
-            <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}" data-songid="${song.id}">Get Lyrics</button>
-          </li>`
+            <li>
+              <img src="" class="img-change" data-id="${song.album.id}">
+              <span><strong>${song.artist.name}</strong> - ${song.title}</span>
+              <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}" data-songid="${song.id}">Get Lyrics</button>
+           </li>`
         )
         .join('')}
 
@@ -54,6 +54,27 @@ const showData = (data) => {
     `;
   } else {
     more.innerHTML = '';
+  }
+
+  const imgs = document.querySelectorAll('.img-change');
+  changePhoto(imgs);
+};
+
+// Change photo fuction needed because of GitHub Pages error
+const changePhoto = async (imgs) => {
+  imgs.forEach(async (img) => {
+    img.src = await getSongImg(img.dataset.id);
+  });
+};
+
+const getSongImg = async (id) => {
+  const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}`);
+  const data = await res.json();
+
+  if (data.cover_small) {
+    return data.cover_small;
+  } else {
+    return 'img/img.png';
   }
 };
 

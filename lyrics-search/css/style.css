@@ -131,10 +131,16 @@ ul.songs li {
   margin: 20px 0;
 }
 
+ul.songs li span {
+  text-align: left;
+  width: calc(100% - 150px);
+  margin-left: 5px;
+}
+
 .container {
   margin: 30px auto;
   max-width: 100%;
-  width: 500px;
+  width: 520px;
 }
 
 .container h2 {

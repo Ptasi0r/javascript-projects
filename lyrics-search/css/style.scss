@@ -102,13 +102,18 @@ ul.songs {
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
+    span {
+      text-align: left;
+      width: calc(100% - 150px);
+      margin-left: 5px;
+    }
   }
 }
 
 .container {
   margin: 30px auto;
   max-width: 100%;
-  width: 500px;
+  width: 520px;
 
   h2 {
     font-weight: 300;
