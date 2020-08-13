@@ -37,7 +37,7 @@ const showData = (data) => {
         .map(
           (song) => ` 
           <li>
-            <img src="${song.album.cover_small}">
+            <img src="${song.album.cover_small.replace('http://e-cdn-images.deezer.com/', 'https://cdns-images.dzcdn.net')}">
             <span><strong>${song.artist.name}</strong> - ${song.title}</span>
             <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}" data-songid="${song.id}">Get Lyrics</button>
           </li>`
