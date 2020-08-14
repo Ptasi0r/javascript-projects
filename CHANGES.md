@@ -17,3 +17,4 @@
 - **Speech Reader:** Added custom user's card with image select from Unsplash API, saved in LocalStorage
 - **Memory Cards:** UI change, added light and dark mode
 - **Lyrics Search:** small UI change, added functionality from Deezer API (img, song preview)
+- **Relaxer App:** Added random envoirement (sea, forest etc.) with diffrent sounds, small music player

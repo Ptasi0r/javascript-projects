@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  background: #224941;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.container.grow {
+  -webkit-animation: grow 3s linear forwards;
+          animation: grow 3s linear forwards;
+}
+
+.container.shrink {
+  -webkit-animation: shrink 3s linear forwards;
+          animation: shrink 3s linear forwards;
+}
+
+.circle {
+  background: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient(#55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  -webkit-animation: rotate 7.5s linear forwards infinite;
+          animation: rotate 7.5s linear forwards infinite;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.music-controll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 300px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.music-controll button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  -webkit-transition: transfrom 0.2s ease-in-out;
+  transition: transfrom 0.2s ease-in-out;
+}
+
+.music-controll button:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.volume-control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.volume-control button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  margin: 0 6px;
+  -webkit-transition: transfrom 0.2s ease-in-out;
+  transition: transfrom 0.2s ease-in-out;
+}
+
+.volume-control button:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.volume-control-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  height: 6px;
+  cursor: pointer;
+}
+
+.volume-control-bar .base,
+.volume-control-bar .progress {
+  height: 6px;
+  border-radius: 6px;
+}
+
+.volume-control-bar .base {
+  background: #c4c4c4;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.volume-control-bar .progress {
+  background: #010f1c;
+  position: absolute;
+  width: 20%;
+  top: 0;
+  left: 0;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes grow {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes grow {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes shrink {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  from {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
