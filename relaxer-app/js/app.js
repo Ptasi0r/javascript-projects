@@ -36,7 +36,7 @@ document.body.style.backgroundImage = `url('img/${place}.jpg')`;
 try {
   audioEl.src = `${path}music/${place}.mp3`;
 } catch {
-  audioEl.src = 'https://raw.githubusercontent.com/Ptasi0r/javascript-projects/master/relaxer-app/music/${place}.mp3';
+  audioEl.src = `https://raw.githubusercontent.com/Ptasi0r/javascript-projects/master/relaxer-app/music/${place}.mp3`;
   path = 'https://raw.githubusercontent.com/Ptasi0r/javascript-projects/master/relaxer-app/';
 }
 

@@ -18,3 +18,4 @@
 - **Memory Cards:** UI change, added light and dark mode
 - **Lyrics Search:** small UI change, added functionality from Deezer API (img, song preview)
 - **Relaxer App:** Added random envoirement (sea, forest etc.) with diffrent sounds, small music player
+- **Breakout Game:** Added PB, popup on game end, sound effects on block breaking, on win and lose

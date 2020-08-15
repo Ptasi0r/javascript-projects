@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0095dd;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 41px;
+  color: white;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  &:hover {
+    background: #222;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.rules-btn {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #333;
+  color: white;
+  min-height: 100vh;
+  width: 400px;
+  padding: 20px;
+  line-height: 1.5;
+  transform: translateX(-400px);
+  transition: transform 1s ease-in-out;
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+canvas {
+  background: #f0f0f0;
+  display: block;
+  border-radius: 5px;
+}
+
+.popup-container {
+  position: absolute;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.show {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.popup {
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.2);
+  border-radius: 5px;
+  color: black;
+  padding: 20px 60px 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 20px;
+    &.personal {
+      color: #0095dd;
+      font-weight: 600;
+    }
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}
