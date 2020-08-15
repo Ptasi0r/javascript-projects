@@ -134,11 +134,13 @@ const moveBall = () => {
 
   if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
     ball.dx *= -1;
+    playSong('wall');
   }
 
   // Wall collision (top/bottom)
   if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
     ball.dy *= -1;
+    playSong('wall');
   }
 
   //Paddle collision
