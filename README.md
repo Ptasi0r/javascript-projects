@@ -1,4 +1,4 @@
-![JavaScript Projects](public/cover.png)
+![JavaScript Projects](https://raw.githubusercontent.com/Ptasi0r/javascript-projects/master/public/img/cover.png)
 
 # JavaScript Projects
 
