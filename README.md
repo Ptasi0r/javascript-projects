@@ -1,4 +1,4 @@
-![JavaScript Projects](cover.png)
+![JavaScript Projects](public/cover.png)
 
 # JavaScript Projects
 
