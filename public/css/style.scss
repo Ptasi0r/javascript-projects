@@ -96,33 +96,96 @@ body {
 
 .project {
   width: 90%;
+  height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: 'slider header' 'slider tags' 'slider buttons';
   gap: 20px;
-  margin: 60px 0;
+  margin: 100px 0;
+
+  &.left {
+    grid-template-areas: 'header slider' 'tags slider' 'buttons slider';
+    .box {
+      &.bottom {
+        bottom: -45px;
+        left: calc(50% + 30px) !important;
+      }
+
+      &.top {
+        top: -30px;
+        left: -30px;
+      }
+    }
+  }
 
   .slider {
-    width: 50%;
-    img {
-      width: calc(50vw - 40px);
+    background-color: white;
+    border-radius: 5px;
+
+    grid-area: slider;
+    position: relative;
+
+    .splide {
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+    }
+
+    .splide__slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .splide__pagination__page {
+      &.is-active {
+        background-color: $yellow-color;
+      }
+    }
+
+    .splide__arrow {
+      background-color: $yellow-color;
+    }
+
+    .box {
+      width: 50%;
+      height: 70px;
+      position: absolute;
+      background-color: $yellow-color;
+      display: block;
+
+      z-index: -1;
+
+      &.bottom {
+        bottom: -45px;
+        left: -30px;
+      }
+
+      &.top {
+        top: -30px;
+        right: -30px;
+      }
     }
   }
 
   .project-info {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    grid-area: header;
     .number {
-      font-size: 50px;
+      font-size: 55px;
       color: $light-gray;
       font-weight: 700;
-      align-self: flex-start;
+      align-self: center;
+      margin-bottom: 20px;
     }
     h2 {
       font-size: 45px;
       margin: 0;
       margin-bottom: 40px;
+      text-align: center;
       span {
         background-color: $yellow-color;
         padding: 5px 10px;
@@ -138,6 +201,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    grid-area: tags;
     width: 100%;
     margin-bottom: 40px;
     .tag {
@@ -149,6 +213,7 @@ body {
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      margin: 10px;
       svg {
         margin-right: 10px;
       }
@@ -156,6 +221,7 @@ body {
   }
 
   .buttons-container {
+    grid-area: buttons;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,5 +248,21 @@ body {
         margin-right: 10px;
       }
     }
+  }
+}
+@media (max-width: 1000px) {
+  .header-section {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 90vw;
+  }
+  .project {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'header' 'tags' 'slider' 'buttons';
+    height: 500px;
   }
 }
