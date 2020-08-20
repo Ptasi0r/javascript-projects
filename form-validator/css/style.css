@@ -16,8 +16,8 @@ body {
 }
 
 .container {
-  height: 85vh;
-  width: 48vw;
+  height: 90vh;
+  width: 52vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
@@ -225,7 +225,8 @@ body {
           box-shadow: 0px 0px 0px 1px red;
 }
 
-input[type='submit'] {
+input[type='submit'],
+.complete-btn {
   background-color: #27305a;
   padding: 15px 45px;
   margin-bottom: 10px;
@@ -242,7 +243,8 @@ input[type='submit'] {
   transition: opacity ease-in-out 0.2s;
 }
 
-input[type='submit']:hover {
+input[type='submit']:hover,
+.complete-btn:hover {
   opacity: 0.95;
 }
 
@@ -329,5 +331,51 @@ input[type='submit']:hover {
 
 .github-link img {
   margin-right: 8px;
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .complete-btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

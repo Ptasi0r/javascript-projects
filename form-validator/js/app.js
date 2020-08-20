@@ -4,6 +4,7 @@ const sliderElement = document.querySelector('.focus-el');
 const formsContainer = document.querySelector('.forms-container');
 const register_form = document.querySelector('.form-signup-container');
 const login_form = document.querySelector('.form-login-container');
+const modalContainer = document.querySelector('.modal-container');
 
 /* Forms slider */
 let sliderContainerRect = sliderContainer.getBoundingClientRect();
@@ -25,7 +26,7 @@ sliderItems.forEach((li, index) => {
       return;
     }
     activeIndex = index;
-
+    console.log(li, sliderElement.offsetLeft, liRect.left - sliderContainerRect.left);
     sliderElement.animate([{ left: `${sliderElement.offsetLeft}px` }, { left: `${liRect.left - sliderContainerRect.left}px` }], {
       duration: 500,
       easing: 'ease-in-out',
@@ -193,21 +194,36 @@ register_form.addEventListener('submit', (e) => {
   if (errorFlag) {
     console.error('Błąd!');
   } else {
-    //TODO: Add better information about signup
     const user = {
       username: username.value,
       password: password.value,
     };
 
-    alert('zalogowano');
     localStorage.setItem('user', JSON.stringify(user));
     console.log({
       username: username.value,
       password: password.value,
     });
 
-    animateForm('-50% - 10px ', '0px');
-    //TODO: add function to move top slider
+    modalContainer.style.display = 'flex';
+    modalContainer.querySelector('.modal').innerHTML = `
+          <h2 class="msg-header">Account has been created!</h2>
+          <p>Check your email to complete registration</p>
+          <button class="complete-btn">Complete Registation</button>
+        `;
+
+    document.querySelector('.complete-btn').addEventListener('click', () => {
+      animateForm('-50% - 10px ', '0px');
+      sliderElement.animate([{ left: `85px` }, { left: `0px` }], {
+        duration: 500,
+        easing: 'ease-in-out',
+      });
+      sliderElement.style.left = `0px`;
+      sliderItems.forEach((el) => {
+        el.classList.toggle('active');
+      });
+      modalContainer.style.display = 'none';
+    });
   }
 });
 
@@ -233,9 +249,12 @@ login_form.addEventListener('submit', (e) => {
       const json_password = json_data['password'];
       console.log(json_username, json_password);
       if (username.value == json_username && password.value == json_password) {
-        alert('zalogowano');
+        modalContainer.style.display = 'flex';
+        modalContainer.querySelector('.modal').innerHTML = `
+          <h2 class="msg-header">You are log in</h2>
+          <p>Have a nice day!</p>
+        `;
       }
-      // console.log(user_json);
     } else {
       alert('Nie założono konta');
     }
