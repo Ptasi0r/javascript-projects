@@ -158,6 +158,9 @@ body {
 .project .slider {
   background-color: white;
   border-radius: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   -ms-grid-column: 2;
@@ -338,7 +341,10 @@ body {
   margin-right: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
+  .site-header {
+    min-height: 100vh;
+  }
   .header-section {
     display: -ms-grid;
     display: grid;
@@ -351,13 +357,74 @@ body {
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     gap: 20px;
-    width: 90vw;
+    width: 80vw;
+    margin-top: 240px;
+    height: 100vh;
+  }
+  .header-container h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .header-container h1 span {
+    display: inline;
+  }
+  .header-container .gray-square {
+    margin: 20px auto;
+  }
+  .header-container p {
+    font-size: 24px;
   }
   .project {
-    -ms-grid-rows: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 'header' 'tags' 'slider' 'buttons';
-    height: 500px;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header' 'slider';
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 50px 0;
+  }
+  .project .slider {
+    width: 80vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .project .slider .splide__slide img {
+    width: 80vw;
+    height: auto;
+    border-radius: 5px;
+  }
+  .project.left {
+        grid-template-areas: 'header' 'slider';
+  }
+  .header-section img {
+    width: 70vw;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+  .project {
+    width: 95vw;
+  }
+  .project .slider .splide__slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1600px) {
+  .slider .splide__slide img {
+    width: 40vw;
+    height: auto;
+    border-radius: 5px;
   }
 }
 /*# sourceMappingURL=style.css.map */
