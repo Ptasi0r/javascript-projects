@@ -29,7 +29,26 @@ const tags = {
 // https://www.textfixer.com/tools/remove-line-breaks.php
 const projects = [
   {
-    path: 'custom-video-player',
+    path: 'form-validator',
+    header: 'Form <span>Validator</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'form-validator' },
+      { id: 2, title: 'Test', path: 'form-validator' },
+      { id: 3, title: 'Test', path: 'form-validator' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'movie-seat-booking',
+    header: '<span>Movie Seat</span> Booking',
+    photos: [
+      { id: 1, title: 'Test', path: 'movie-seat-booking' },
+      { id: 2, title: 'Test', path: 'movie-seat-booking' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'video-player',
     header: 'Custom <span>Video Player</span>',
     photos: [
       { id: 1, title: 'Test', path: 'custom-video-player' },
@@ -38,13 +57,167 @@ const projects = [
     tags: ['localstorage', 'video', 'volume'],
   },
   {
-    path: 'exchange-rate-calculator',
+    path: 'exchange-calculator',
     header: '<span>Exchange Rate</span> Calculator',
     photos: [
       { id: 1, title: 'Test', path: 'exchange-rate-calculator' },
       { id: 2, title: 'Test', path: 'exchange-rate-calculator' },
     ],
+    tags: ['ui'],
+  },
+  {
+    path: 'dom-array-methods',
+    header: 'DOM <span>Array Methods</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'dom-array-methods' },
+      { id: 2, title: 'Test', path: 'dom-array-methods' },
+      { id: 3, title: 'Test', path: 'dom-array-methods' },
+    ],
     tags: [],
+  },
+  {
+    path: 'landing-page',
+    header: 'Landing Page with <span>Modal and Navbar</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'landing-page' },
+      { id: 2, title: 'Test', path: 'landing-page' },
+      { id: 3, title: 'Test', path: 'landing-page' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'hangman-game',
+    header: '<span>Hangman</span> Game',
+    photos: [
+      { id: 1, title: 'Test', path: 'hangman-game' },
+      { id: 2, title: 'Test', path: 'hangman-game' },
+      { id: 3, title: 'Test', path: 'hangman-game' },
+      { id: 4, title: 'Test', path: 'hangman-game' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'meal-finder',
+    header: '<span>Meal</span> Finder',
+    photos: [
+      { id: 1, title: 'Test', path: 'meal-finder' },
+      { id: 2, title: 'Test', path: 'meal-finder' },
+      { id: 3, title: 'Test', path: 'meal-finder' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'expense-tracker',
+    header: '<span>Expense</span> Tracker',
+    photos: [
+      { id: 1, title: 'Test', path: 'expense-tracker' },
+      { id: 2, title: 'Test', path: 'expense-tracker' },
+    ],
+    tags: ['localstorage'],
+  },
+  {
+    path: 'music-player',
+    header: 'Music <span>Player</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'music-player' },
+      { id: 2, title: 'Test', path: 'music-player' },
+      { id: 3, title: 'Test', path: 'music-player' },
+    ],
+    tags: ['localstorage', 'ui', 'volume'],
+  },
+  {
+    path: 'infinite-scroll',
+    header: '<span>Infinite</span> Scroll',
+    photos: [
+      { id: 1, title: 'Test', path: 'infinite-scroll' },
+      { id: 2, title: 'Test', path: 'infinite-scroll' },
+      { id: 3, title: 'Test', path: 'infinite-scroll' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'typing-game',
+    header: '<span>Typing</span> Game',
+    photos: [
+      { id: 1, title: 'Test', path: 'typing-game' },
+      { id: 2, title: 'Test', path: 'typing-game' },
+      { id: 3, title: 'Test', path: 'typing-game' },
+    ],
+    tags: ['localstorage'],
+  },
+  {
+    path: 'speech-text-reader',
+    header: 'Speech <span>Text Reader</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'speech-text-reader' },
+      { id: 2, title: 'Test', path: 'speech-text-reader' },
+      { id: 3, title: 'Test', path: 'speech-text-reader' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'memory-cards',
+    header: '<span>Memory</span> Cards',
+    photos: [
+      { id: 1, title: 'Test', path: 'memory-cards' },
+      { id: 2, title: 'Test', path: 'memory-cards' },
+      { id: 3, title: 'Test', path: 'memory-cards' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'lyrics-search',
+    header: 'Lyrics <span>Search</span>',
+    photos: [
+      { id: 1, title: 'Test', path: 'lyrics-search' },
+      { id: 2, title: 'Test', path: 'lyrics-search' },
+      { id: 3, title: 'Test', path: 'lyrics-search' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'relaxer-app',
+    header: '<span>Relaxer</span> App',
+    photos: [
+      { id: 1, title: 'Test', path: 'relaxer-app' },
+      { id: 2, title: 'Test', path: 'relaxer-app' },
+    ],
+    tags: ['localstorage', 'ui'],
+  },
+  {
+    path: 'breakout-game',
+    header: '<span>Breakout</span> Game',
+    photos: [
+      { id: 1, title: 'Test', path: 'breakout-game' },
+      { id: 2, title: 'Test', path: 'breakout-game' },
+      { id: 3, title: 'Test', path: 'breakout-game' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'new-year-countdown',
+    header: 'New Year <span>Countdown</span>',
+    photos: [{ id: 1, title: 'Test', path: 'new-year-countdown' }],
+    tags: ['ui'],
+  },
+  {
+    path: 'sortable-list',
+    header: '<span>Sortable</span> List',
+    photos: [
+      { id: 1, title: 'Test', path: 'sortable-list' },
+      { id: 2, title: 'Test', path: 'sortable-list' },
+    ],
+    tags: ['ui'],
+  },
+  {
+    path: 'number-quessing-game',
+    header: '<span>Sortable</span> List',
+    photos: [
+      { id: 1, title: 'Test', path: 'number-quessing-game' },
+      { id: 2, title: 'Test', path: 'number-quessing-game' },
+      { id: 3, title: 'Test', path: 'number-quessing-game' },
+    ],
+    tags: ['ui'],
   },
 ];
 
