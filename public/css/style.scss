@@ -243,11 +243,107 @@ body {
       &.preview {
         background-color: $yellow-color;
         color: black;
+        height: 56px;
       }
       svg {
         margin-right: 10px;
       }
     }
+  }
+}
+
+.udemy {
+  min-height: 50vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 40px;
+  background-color: $light-gray;
+  width: 100%;
+  padding-bottom: 40px;
+
+  .img-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 60%;
+      margin-top: -10px;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      font-size: 50px;
+      line-height: 45px;
+      font-weight: normal;
+      text-align: center;
+      span {
+        background-color: $yellow-color;
+        padding: 5px 10px;
+        width: fit-content;
+        font-weight: 700;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+      line-height: 35px;
+      margin-bottom: 10px;
+
+      span {
+        background-color: $yellow-color;
+        padding: 5px 10px;
+        width: fit-content;
+        font-weight: 700;
+      }
+    }
+
+    .gray-square {
+      margin: 10px auto;
+    }
+    a {
+      background-color: #ec4a4a;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 5px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: max-content;
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.site-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    background-color: $yellow-color;
+    padding: 5px 15px;
+    font-size: 20px;
+    cursor: pointer;
   }
 }
 
@@ -312,6 +408,13 @@ body {
       width: 70vw;
       align-self: start;
     }
+  }
+
+  .udemy {
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
   }
 }
 

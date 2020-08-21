@@ -335,10 +335,146 @@ body {
 .project .buttons-container .button.preview {
   background-color: #f7df1e;
   color: black;
+  height: 56px;
 }
 
 .project .buttons-container .button svg {
   margin-right: 10px;
+}
+
+.udemy {
+  min-height: 50vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  padding: 40px;
+  background-color: #efefef;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.udemy .img-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.udemy .img-container img {
+  width: 60%;
+  margin-top: -10px;
+}
+
+.udemy div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.udemy div h1 {
+  font-size: 50px;
+  line-height: 45px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.udemy div h1 span {
+  background-color: #f7df1e;
+  padding: 5px 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.udemy div p {
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  margin-bottom: 10px;
+}
+
+.udemy div p span {
+  background-color: #f7df1e;
+  padding: 5px 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.udemy div .gray-square {
+  margin: 10px auto;
+}
+
+.udemy div a {
+  background-color: #ec4a4a;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  height: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.udemy div a svg {
+  margin-right: 10px;
+}
+
+.site-footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: inherit;
+  background-color: #f7df1e;
+  padding: 5px 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 @media (max-width: 999px) {
@@ -406,6 +542,15 @@ body {
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
+  }
+  .udemy {
+    min-height: 50vh;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 50% 50%;
+        grid-template-rows: 50% 50%;
   }
 }
 
