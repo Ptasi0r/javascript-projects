@@ -24,7 +24,7 @@ body {
 }
 
 .site-header {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -495,7 +495,7 @@ body {
     gap: 20px;
     width: 80vw;
     margin-top: 240px;
-    height: 100vh;
+    min-height: 100vh;
   }
   .header-container h1 {
     font-size: 30px;
@@ -544,13 +544,18 @@ body {
         align-self: start;
   }
   .udemy {
-    min-height: 50vh;
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 50% 50%;
-        grid-template-rows: 50% 50%;
+    -ms-grid-rows: 30% 50%;
+        grid-template-rows: 30% 50%;
+  }
+  .udemy div h1 {
+    font-size: 34px;
   }
 }
 
