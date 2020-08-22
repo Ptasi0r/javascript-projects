@@ -51,13 +51,13 @@ sliderItems.forEach((li, index) => {
 });
 
 /* Register form submit */
-
 const getFieldName = (input) => {
   let name = input.getAttribute('name');
   name = name.replace('_', ' ');
   return name.charAt(0).toUpperCase() + name.slice(1);
 };
 
+// Show input error message
 const showError = (input, msg) => {
   const parent = input.parentElement;
   const errorContainer = parent.querySelector('.error-msg');
@@ -66,6 +66,7 @@ const showError = (input, msg) => {
   errorContainer.style.visibility = 'visible';
 };
 
+// Show success outline
 const showSuccess = (input) => {
   const parent = input.parentElement;
   if (parent.classList.contains('error')) {
@@ -76,6 +77,7 @@ const showSuccess = (input) => {
   errorContainer.style.visibility = 'hidden';
 };
 
+//Check requiered inputs
 const checkRequired = (inputs) => {
   let errorFlag = false;
   inputs.forEach((input) => {
@@ -89,6 +91,7 @@ const checkRequired = (inputs) => {
   return errorFlag;
 };
 
+// Check input length
 const checkLength = (input, min, max) => {
   let errorFlag = false;
   const valueLength = input.value.length;
@@ -128,6 +131,7 @@ const checkPasswordStrong = (input) => {
   return errorFlag;
 };
 
+// Check passwords match
 const checkMatch = (input, input2) => {
   let errorFlag = false;
   if (input.value === input2.value) {

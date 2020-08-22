@@ -34,6 +34,7 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 const correctLetter = [];
 const wrongLetter = [];
 
+// Show hidden word
 const displayWord = () => {
   wordEl.innerHTML = `
   ${selectedWord
@@ -53,6 +54,7 @@ const displayWord = () => {
   }
 };
 
+// Update the wrong letters
 const updateWrongLetterEl = () => {
   wrongLettersEl.innerHTML = `
     ${wrongLetter.length > 0 ? '<p> Wrong: </p>' : ''}
@@ -75,6 +77,7 @@ const updateWrongLetterEl = () => {
   }
 };
 
+// Show notification
 const showNotificaton = () => {
   notification.classList.add('show');
   setTimeout(() => {
@@ -82,6 +85,7 @@ const showNotificaton = () => {
   }, 2000);
 };
 
+// Keydown letter press
 window.addEventListener('keydown', (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const letter = e.key;
@@ -104,6 +108,7 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+// Restart game and play again
 playAgainBtn.addEventListener('click', () => {
   correctLetter.splice(0);
   wrongLetter.splice(0);
@@ -121,6 +126,7 @@ playAgainBtn.addEventListener('click', () => {
   popup.style.display = 'none';
 });
 
+// Screen keyboard press
 keyboardContainer.addEventListener('click', (e) => {
   if (e.target.classList.contains('letter')) {
     const letter = e.target.dataset.letter;
@@ -145,6 +151,7 @@ keyboardContainer.addEventListener('click', (e) => {
   }
 });
 
+// Show random letter from word = hint
 hintBtn.addEventListener('click', () => {
   let remainingLetters = [];
   selectedWord.split('').forEach((letter) => {

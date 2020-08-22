@@ -7,6 +7,7 @@ const calculateWealthBtn = document.querySelector('.calculate-wealth');
 
 let data = [];
 
+// Fetch random user and add money
 const getRandomUser = async () => {
   const result = await fetch('https://randomuser.me/api/');
   const data = await result.json();
@@ -20,6 +21,7 @@ const getRandomUser = async () => {
   addData(newUser);
 };
 
+// Double eveyones money
 const doubleMoney = () => {
   data = data.map((user) => {
     return { ...user, money: user.money * 2 };
@@ -28,16 +30,19 @@ const doubleMoney = () => {
   updateDOM();
 };
 
+// Sort users by richest
 const sortByRichest = () => {
   data.sort((a, b) => b.money - a.money);
   updateDOM();
 };
 
+// Filter only millionaires
 const showMillionaires = () => {
   data = data.filter((user) => user.money > 1000000);
   updateDOM();
 };
 
+// Calculate the total wealth
 const calculateWealth = () => {
   const wealth = data.reduce((acc, user) => (acc += user.money), 0);
 
@@ -46,11 +51,13 @@ const calculateWealth = () => {
   main.appendChild(wealthEl);
 };
 
+// Add new obj to data arr
 const addData = (user) => {
   data.push(user);
   updateDOM();
 };
 
+// Update DOM
 const updateDOM = (providedData = data) => {
   main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
 
@@ -62,6 +69,7 @@ const updateDOM = (providedData = data) => {
   });
 };
 
+// Format number as money
 const formatMoney = (money) => {
   return '$' + money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 };

@@ -6,6 +6,7 @@ const rateEl = document.querySelector('.rate');
 const dateEl = document.querySelector('.date');
 const swapBtn = document.querySelector('.swap');
 
+// Fetch exchange rates and update the DOM
 const calculate = async () => {
   const currencyOne = currencyElOne.value;
   const currencyTwo = currencyElTwo.value;

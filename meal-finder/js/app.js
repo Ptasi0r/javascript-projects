@@ -6,6 +6,7 @@ const resultHeading = document.querySelector('.result-heading');
 const singleMealEl = document.querySelector('.single-meal-container');
 const placeholderText = document.querySelector('.placeholder-text');
 
+// Search meal and fetch from API
 const searchMeal = async () => {
   singleMealEl.innerHTML = '';
 
@@ -43,6 +44,7 @@ const searchMeal = async () => {
   }
 };
 
+// Fetch random meal from API
 const randomMeal = async () => {
   mealsEl.innerHTML = '';
   mealsEl.style.display = 'none';
@@ -54,6 +56,7 @@ const randomMeal = async () => {
   addMealToDOM(meal);
 };
 
+// Fetch meal by ID
 const getMealByID = async (mealID) => {
   const respond = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`);
   const data = await respond.json();
@@ -61,6 +64,7 @@ const getMealByID = async (mealID) => {
   addMealToDOM(meal);
 };
 
+// Add meal to DOM
 const addMealToDOM = (meal) => {
   const ingredients = [];
 

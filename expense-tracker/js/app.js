@@ -28,6 +28,7 @@ const localStorageTransations = JSON.parse(localStorage.getItem('transactions'))
 
 let transactions = localStorage.getItem('transactions') !== null ? localStorageTransations : [];
 
+// Add transaction
 const addTrasaction = (e) => {
   e.preventDefault();
 
@@ -51,10 +52,12 @@ const addTrasaction = (e) => {
   }
 };
 
+// Generate random ID
 const generateId = () => {
   return Math.floor(Math.random() * 1000000000);
 };
 
+// Add transactions to DOM list
 const addTransactionDOM = (transaction) => {
   const sign = transaction.amount < 0 ? '-' : '+';
   const item = document.createElement('li');
@@ -67,6 +70,7 @@ const addTransactionDOM = (transaction) => {
   list.appendChild(item);
 };
 
+// Update the balance, income and expense
 const updateValues = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
@@ -85,16 +89,19 @@ const updateValues = () => {
   moneyMinus.innerText = `$${expense}`;
 };
 
+// Remove transaction by ID
 const removeTransaction = (id) => {
   transactions = transactions.filter((transaction) => transaction.id !== id);
   updateLocalStorage();
   init();
 };
 
+// Update local storage transactions
 const updateLocalStorage = () => {
   localStorage.setItem('transactions', JSON.stringify(transactions));
 };
 
+// Init app
 const init = () => {
   list.innerHTML = '';
   transactions.forEach(addTransactionDOM);

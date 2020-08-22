@@ -7,6 +7,7 @@ const volumeSlider = document.querySelector('.volume');
 const volumeMute = document.querySelector('.volume-mute');
 let previousVolume = 0;
 
+// Play & pause video
 const toggleVideoStatus = () => {
   if (video.paused) {
     video.play();
@@ -15,6 +16,7 @@ const toggleVideoStatus = () => {
   }
 };
 
+// update play/pause icon
 const updatePlayIcon = () => {
   if (video.paused) {
     play.innerHTML = '<i class="fas fa-play fa-2x"></i>';
@@ -23,6 +25,7 @@ const updatePlayIcon = () => {
   }
 };
 
+// Update progress & timestamp
 const updateProgress = () => {
   progress.value = (video.currentTime / video.duration) * 100;
   let mins = Math.floor(video.currentTime / 60);
@@ -38,21 +41,25 @@ const updateProgress = () => {
   timestamp.innerHTML = `${mins}:${secs}`;
 };
 
+// Stop video
 const stopVideo = () => {
   video.currentTime = 0;
   video.pause();
 };
 
+// Set video time to progress
 const setVideoProgress = () => {
   video.currentTime = (+progress.value * video.duration) / 100;
 };
 
+// Set video volume to value
 const setVideoVolume = () => {
   let volumeValue = volumeSlider.value;
   video.volume = volumeValue / 100;
   localStorage.setItem('videoVolume', volumeValue);
 };
 
+// Mute/Unmute video
 const changeMuteVideo = () => {
   if (video.volume == 0) {
     video.volume = previousVolume;
@@ -81,6 +88,7 @@ volumeSlider.addEventListener('input', setVideoVolume);
 
 volumeMute.addEventListener('click', changeMuteVideo);
 
+// Get data from LocalStorage
 const videoVolumeLS = localStorage.getItem('videoVolume');
 console.log(videoVolumeLS);
 if (videoVolumeLS) {

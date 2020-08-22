@@ -60,6 +60,7 @@ const updateSeatsCount = () => {
   localStorage.setItem('movieBill', JSON.stringify(movieBill));
 };
 
+// Get data from localstorage and populate UI
 const getDataFromLocalStorage = () => {
   const movieBill = JSON.parse(localStorage.getItem('movieBill'));
   console.log(movieBill);
